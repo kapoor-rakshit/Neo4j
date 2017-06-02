@@ -1,0 +1,10 @@
+USING PERIODIC COMMIT
+LOAD CSV WITH HEADERS FROM 'file:///dataset.csv' AS line
+CREATE (:data { ticket_no: toInteger(line.Ticket_No), ticket_type:line.Ticket_Type, severity:line.Severity, 
+requester_id:toInteger(line.Requester_ID), requester_seniority:line.Requester_Seniority, filed_against:line.Filed_Against,
+priority:line.Priority,it_owner_id:toInteger(line.IT_Owner_ID), days_open:toInteger(line.Days_Open), satisfaction:line.Satisfaction})
+
+//The .xlsx (excel) file must be SAVED AS .csv (MS DOS, UTF-8) format
+//The file must be saved at database location(C:\Users\R6000670\Documents\Neo4j\default.graphdb)\import\<filename.csv>
+
+
