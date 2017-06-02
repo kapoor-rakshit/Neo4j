@@ -27,3 +27,19 @@ return a,b limit 10
 MATCH (a:player), (b:Country) WHERE a.name = "Shikar Dhawan" AND b.name = "India" 
 CREATE (a)-[r:BATSMAN_OF {Matches:5, Avg:90.75}]->(b)  
 RETURN a,b 
+
+
+//Creating a path
+
+CREATE p = 
+   (Node1 {properties})-[:Relationship_Type]->
+   (Node2 {properties})-[:Relationship_Type]->
+   (Node3 {properties}) 
+RETURN p 
+
+for example:-
+CREATE p = 
+   (Dhawan {name:"Shikar Dhawan"})-[:TOPSCORRER_OF]->
+   (Ind{name:"India"})-[:WINNER_OF]->
+   (CT2013{name: "Champions Trophy 2013"}) 
+RETURN p 
