@@ -1,0 +1,9 @@
+//delete all the nodes and the relationships in the database
+
+MATCH (n) DETACH DELETE n
+
+
+//delete a particular node, you need to specify the details of the node in the place of “n” 
+//whichever node matches the properties will be deleted (properties specified act as   prop1 && prop2 && ....)
+
+match (adhishkapoor:developer{proficiency:"expert"}) detach delete adhishkapoor
