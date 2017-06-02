@@ -1,0 +1,8 @@
+//The count() function is used to count the number of rows.
+
+MATCH (n {properties})--(x) 
+RETURN n, count(*) 
+
+for example:-
+Match(n{name: "India", result: "Winners"})--(x)  
+RETURN n, count(*) 
