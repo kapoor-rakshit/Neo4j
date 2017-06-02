@@ -1,0 +1,22 @@
+//MERGE : used to prevent duplicacy
+
+//merge a node in the database based on the label. If node not present in database, the current node will be created else not
+//if a label does not exist with the name then label and node are created
+
+merge (sachin:developer{average:32.65}) return sachin,labels(sachin)
+
+
+//merge node based on properties and label
+//if not exist then create one
+
+MERGE (Jadeja:player {name: "Ravindra Jadeja", YOB: 1988, POB: "NavagamGhed"}) 
+RETURN Jadeja 
+
+//on create , on match
+//check the properties,label which is specified to have another new property set
+//if the node is present, property is added else both node with property are created 
+
+merge (sachin:player{average:32.65}) 
+on match set sachin.presenthai="hai phle se" 
+on create set sachin.absenthai="nhi tha to bna diya"
+return sachin
