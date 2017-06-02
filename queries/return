@@ -1,0 +1,24 @@
+
+//return a particular column with alias
+
+Match (Dhoni:player {name: "MahendraSingh Dhoni", YOB: 1981, POB: "Ranchi"}) 
+Return Dhoni.POB as Place Of Birth
+
+
+//return all the elements in the Neo4j database
+
+Match p = (n {name: "India", result: "Winners"})-[r]-(x)  
+RETURN * 
+
+
+//return properties
+
+Match (Dhoni:player {name: "MahendraSingh Dhoni", YOB: 1981, POB: "Ranchi"}) 
+Return Dhoni.name, Dhoni.POB 
+
+
+//return relationships
+
+CREATE (Ind)-[r1:WINNERS_OF {NRR:0.938 ,pts:6}]->(CT2013) 
+CREATE(Dhoni)-[r2:CAPTAIN_OF]->(Ind) 
+RETURN r1, r2 
