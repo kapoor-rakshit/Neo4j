@@ -1,0 +1,7 @@
+"As they say Connections are important than Relationships"
+
+match (a:data),(b:filedagainst) where a.filed_against="Systems" and b.fa="systems" 
+create (a)-[r:filedagainst]->(b) 
+return a,b limit 10
+
+//Create connections between nodes already created
