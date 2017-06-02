@@ -1,0 +1,22 @@
+//add or remove a property
+
+//a new property added to specific node
+//IMPORTANT : to give the properties with match ELSE entire nodes under that label get effected and any further change causes all to effect 
+
+match (sachin:developer{average:32.65}) 
+set sachin.highscore = 3259, sachin.high6 = 63, sachin.high4 = 65
+return sachin
+
+
+//remove a property from a node, set it to NULL
+//IMPORTANT :  to give the properties with match ELSE entire nodes under that label get effected
+
+match (sachin:player{score:859}) 
+set sachin.highscore=NULL
+
+
+//set a label to node
+
+MATCH (Ishant {name: "Ishant Sharma", YOB: 1988, POB: "Delhi"}) 
+SET Ishant: player:person 
+RETURN Ishant 
