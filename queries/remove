@@ -1,0 +1,19 @@
+//REMOVE operation is used to remove labels and properties.
+//DELETE operation is used to delete nodes and associated relationships.
+
+//remove property using REMOVE
+
+MATCH (node:label{properties . . . . . . . }) 
+REMOVE node.property 
+
+
+//remove property using SET, set property to NULL
+
+match (sachin:player{score:859}) 
+set sachin.highscore=NULL
+
+
+//remove label
+
+MATCH (node:label {properties . . . . . . . . . . . }) 
+REMOVE node:label1:label2
