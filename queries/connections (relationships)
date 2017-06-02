@@ -1,7 +1,29 @@
 "As they say Connections are important than Relationships"
 
+
+//Create connections between new nodes
+
+CREATE (Dhawan:player{name: "Shikar Dhawan", YOB: 1985, POB: "Delhi"}) 
+CREATE (Ind:Country {name: "India"})
+CREATE (Dhawan)-[r:BATSMAN_OF]->(Ind) 
+RETURN Dhawan, Ind 
+
+
+//Create connections between existing nodes
+
+MATCH (a:LabeofNode1), (b:LabeofNode2) 
+   WHERE a.key = "value"/value AND b.key = "value"/value 
+CREATE (a)-[: Relation_type_toshow_on_arrow]->(b) 
+RETURN a,b 
+
+for example:-
 match (a:data),(b:filedagainst) where a.filed_against="Systems" and b.fa="systems" 
 create (a)-[r:filedagainst]->(b) 
 return a,b limit 10
 
-//Create connections between nodes already created
+
+//a connection with label and properties
+
+MATCH (a:player), (b:Country) WHERE a.name = "Shikar Dhawan" AND b.name = "India" 
+CREATE (a)-[r:BATSMAN_OF {Matches:5, Avg:90.75}]->(b)  
+RETURN a,b 
