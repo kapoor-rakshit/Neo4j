@@ -1,0 +1,12 @@
+//The OPTIONAL MATCH clause is used to search for the pattern described in it, while using nulls for missing parts of the pattern.
+//It returns null as a result of the missing parts of the pattern.
+//NOTE the --> in optional match
+
+MATCH (node:label {properties. . . . . . . . . . . . . .}) 
+OPTIONAL MATCH (node)-->(x) 
+RETURN x
+
+for example:-
+MATCH (a:Tornament {name: "ICC Champions Trophy 2013"}) 
+OPTIONAL MATCH (a)-->(x) 
+RETURN x 
