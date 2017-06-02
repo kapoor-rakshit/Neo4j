@@ -11,3 +11,5 @@ CREATE (node:label { key1: value, key2: value, . . . . . . . . .  })   //a node 
 CREATE (Node:Label{properties. . . . }) RETURN Node                    //RETURN clause with CREATE to view the newly created node.
 
 MATCH (n) RETURN n                                                    //This query returns all the nodes in the database
+
+MATCH (n:player) RETURN n limit 10                                    //Return nodes with particular label (player here)
