@@ -1,0 +1,18 @@
+
+MATCH (labelname)  
+WHERE labelname.key = "value" 
+RETURN labelname 
+
+for example:-
+MATCH (player)  
+WHERE player.country = "India" AND player.runs >=175 
+RETURN player 
+
+
+//A graph in the database exists.
+//here to retrieve the top scorer of India ie label country with the node having the name India and results Winners.
+
+for example:-
+MATCH (n) 
+WHERE (n)-[: TOP_SCORER_OF]->( {name: "India", result: "Winners"}) 
+RETURN n 
