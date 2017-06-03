@@ -1,0 +1,19 @@
+//The SKIP clause is used to define from which row to start including the rows in the output.
+
+
+//returns all the nodes in the database skipping the first 3 nodes.
+
+MATCH (n)  
+RETURN n.name, n.runs 
+ORDER BY n.runs DESC 
+SKIP 3 
+
+
+//using rand()
+
+MATCH (n)  
+RETURN n.name, n.runs 
+ORDER BY n.runs DESC 
+SKIP toInteger(2*rand())+ 1
+
+//rand() : Returns a random number in the range from 0 (inclusive) to 1 (exclusive), [0, 1).
