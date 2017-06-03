@@ -29,4 +29,5 @@ RETURN r1, r2
 MATCH (n) 
 WITH n 
 ORDER BY n.key 
-RETURN collect(n.key) 
+RETURN collect(n.key)                        //OUTPUT : [ val1, val2, val3, ....... ]
+
