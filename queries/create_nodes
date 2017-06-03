@@ -17,5 +17,5 @@ MATCH (n:player) RETURN n limit 10                                    //Return n
 MATCH (n) 
 RETURN n.name, n.runs 
 ORDER BY n.runs DESC 
-LIMIT toInt(3 * rand())+ 1                                           //limit with random expression
+LIMIT toInteger(3 * rand())+ 1                                           //limit with random expression
 
