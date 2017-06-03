@@ -28,3 +28,32 @@ RETURN replace("hello", "l", "w")                              //OUTPUT : "hewwo
 //REVERSE() returns the original string reversed.
 
 RETURN reverse('anagram')
+
+
+//COUNT() : counts the number of rows present in that result and returns the count value.
+
+MATCH (n:employee)  
+WHERE n.sal>27000 
+RETURN COUNT(n) 
+
+
+//MAX() : finds the maximum value from the given <property-name> column of the given rows.
+
+MATCH (n:employee) RETURN MAX(n.sal)
+
+
+//MIN() : finds the minimum value from the given <property-name> column of the given rows.
+
+MATCH (n:employee) RETURN MIN(n.sal) 
+
+
+//SUM() : finds the summation value from the given <property-name> column of given rows.
+
+MATCH (n:employee) RETURN SUM(n.sal) 
+
+
+//AVG() : finds the average value from the given <property-name> column of given rows.
+
+MATCH (n:employee) RETURN AVG(n.sal)
+
+
