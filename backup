@@ -1,0 +1,14 @@
+//To have a backup of your database
+
+
+shut down the Neo4j server.
+
+Create a folder "Neo4jDbBackup" at different location. (This may be any location in your file system).
+
+Copy all the data in the folder of your database to this "Neo4jDbBackup" folder created at different location.
+
+Use any Windows compression/decompression tool like WinZip, 7 Zip, or WinRAR to zip our Database folder.
+
+
+//This has created the BACKUP and to RESTORE follow the reverse process to copy data to your actual database folder
+//from the "Neo4jDbBackup" folder
