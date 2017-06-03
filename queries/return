@@ -22,3 +22,11 @@ Return Dhoni.name, Dhoni.POB
 CREATE (Ind)-[r1:WINNERS_OF {NRR:0.938 ,pts:6}]->(CT2013) 
 CREATE(Dhoni)-[r2:CAPTAIN_OF]->(Ind) 
 RETURN r1, r2 
+
+
+//WITH clause and collect()
+
+MATCH (n) 
+WITH n 
+ORDER BY n.key 
+RETURN collect(n.key) 
