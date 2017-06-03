@@ -13,3 +13,9 @@ CREATE (Node:Label{properties. . . . }) RETURN Node                    //RETURN 
 MATCH (n) RETURN n                                                    //This query returns all the nodes in the database
 
 MATCH (n:player) RETURN n limit 10                                    //Return nodes with particular label (player here)
+
+MATCH (n) 
+RETURN n.name, n.runs 
+ORDER BY n.runs DESC 
+LIMIT toInt(3 * rand())+ 1                                           //limit with random expression
+
