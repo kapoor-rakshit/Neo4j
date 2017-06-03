@@ -1,0 +1,37 @@
+//Constraint that makes sure that your database will never contain more than one node with a specific label and one property value
+//create UNIQUE
+
+CREATE CONSTRAINT ON (node:label) ASSERT node.key IS UNIQUE
+
+for example:-
+CREATE CONSTRAINT ON (book:Book) ASSERT book.isbn IS UNIQUE
+
+CREATE (book:Book { isbn: '1449356265', title: 'Graph Databases' })          //created
+CREATE (book:Book { isbn: '1449356265', title: 'Graph Databases' })          //second node not created because isbn must be unique
+
+//drop UNIQUE
+
+DROP CONSTRAINT ON (book:Book) ASSERT book.isbn IS UNIQUE
+
+
+//To create a constraint that makes sure that all nodes with a certain label have a certain property mandatory
+//create exists
+
+CREATE CONSTRAINT ON (book:Book) ASSERT exists(book.isbn)
+
+CREATE (book:Book { isbn: '1449356265', title: 'Graph Databases' })        //created
+CREATE (book:Book { title: 'Graph Databases' })                            //not created because isbn key is not present
+
+//drop exists
+
+DROP CONSTRAINT ON (book:Book) ASSERT exists(book.isbn)
+
+//removal of mandatory key not possible
+
+MATCH (book:Book { title: 'Graph Databases' })
+REMOVE book.isbn                                                          //the property is not removed.
+
+
+//NODE KEYS : ensure properties are present and unique
+
+CREATE CONSTRAINT ON (n:Person) ASSERT (n.firstname, n.surname) IS NODE KEY
