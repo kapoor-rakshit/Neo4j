@@ -1,0 +1,17 @@
+//Arrange the result data in order
+
+MATCH (n)  
+RETURN n.property1, n.property2 . . . . . . . .  
+ORDER BY n.property
+
+for example:-
+MATCH (n)                                      //gives the names, country and runs in ascending order of runs,country
+RETURN n.name, n.runs, n.country
+ORDER BY n.runs, n.country
+
+
+//decsending order
+
+MATCH (n)  
+RETURN n.name, n.runs 
+ORDER BY n.runs DESC 
