@@ -1,3 +1,6 @@
+//toString() : converts a data type to string type
+
+
 //toUpper() : converts the arg to upper case
 
 MATCH (n:player)  
