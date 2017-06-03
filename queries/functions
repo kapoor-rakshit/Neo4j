@@ -1,0 +1,27 @@
+//toUpper() : converts the arg to upper case
+
+MATCH (n:player)  
+RETURN toUpper(n.name), n.YOB, n.POB 
+
+
+//toLower() : converts the arg to lower case
+
+MATCH (n:player)  
+RETURN toLower(n.name), n.YOB, n.POB 
+
+
+//SUBSTRING() : string and two indexes: start and end, returns a substring from (StartIndex) to (EndIndex-1)
+//here :  0,1,2,3,4 characters of name are displayed
+
+MATCH (n:player)  
+RETURN SUBSTRING(n.name,0,5), n.YOB, n.POB
+
+
+//REPLACE (original, search, replace)
+
+RETURN replace("hello", "l", "w")                              //OUTPUT : "hewwo"
+
+
+//REVERSE() returns the original string reversed.
+
+RETURN reverse('anagram')
